@@ -10,6 +10,6 @@
 
         public string Position { get; set; }
 
-        public DateTime SeparationDate { get; set; }
+        public DateTime? SeparationDate { get; set; }
     }
 }

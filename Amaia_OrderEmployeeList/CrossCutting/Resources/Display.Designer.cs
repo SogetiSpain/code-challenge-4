@@ -70,11 +70,38 @@ namespace CrossCutting.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date separation.
+        /// </summary>
+        public static string DateSeparation {
+            get {
+                return ResourceManager.GetString("DateSeparation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ((A)pellido, (N)ombre, (P)osición, (F)echa de separación o (S)alir).
         /// </summary>
         public static string Order {
             get {
                 return ResourceManager.GetString("Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position.
+        /// </summary>
+        public static string Position {
+            get {
+                return ResourceManager.GetString("Position", resourceCulture);
             }
         }
     }

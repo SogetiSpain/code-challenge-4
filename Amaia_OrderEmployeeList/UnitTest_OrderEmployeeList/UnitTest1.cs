@@ -3,7 +3,8 @@
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
-    using ServiceLayer.Models;
+    using ListOrderService.Models;
+
     [TestClass]
     public class UnitTest1
     {

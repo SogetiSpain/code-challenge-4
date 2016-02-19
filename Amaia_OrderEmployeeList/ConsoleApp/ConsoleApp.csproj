@@ -54,6 +54,10 @@
       <Project>{bf9d1439-8fed-4d2a-9e05-6a20255ee37f}</Project>
       <Name>CrossCutting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ListOrderService\ListOrderService.csproj">
+      <Project>{d07ca930-3a9e-4377-932d-da15c3eb2dde}</Project>
+      <Name>ListOrderService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
