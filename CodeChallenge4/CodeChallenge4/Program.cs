@@ -10,6 +10,7 @@ namespace CodeChallenge4
     using System.Net.Http;
     using System.Threading.Tasks;
     using ServiceLayer;
+    using MainConstants;
 
     public class Program
     {
@@ -27,19 +28,19 @@ namespace CodeChallenge4
             {
                 switch (op)
                 {
-                    case 'N':
-                        employees = employeeService.FindByCriteria<EmployeeDTO>(employees, x => x.FirstName);
+                    case MainConstants.MainConstants.NameKey:
+                        employees = employeeService.OrderByCriteria<EmployeeDTO>(employees, x => x.FirstName);
                         break;
 
-                    case 'L':
-                        employees = employeeService.FindByCriteria<EmployeeDTO>(employees, x => x.LastName);
+                    case MainConstants.MainConstants.LastNameKey:
+                        employees = employeeService.OrderByCriteria<EmployeeDTO>(employees, x => x.LastName);
                         break;
 
-                    case 'P':
-                        employees = employeeService.FindByCriteria<EmployeeDTO>(employees, x => x.Position);
+                    case MainConstants.MainConstants.Positionkey:
+                        employees = employeeService.OrderByCriteria<EmployeeDTO>(employees, x => x.Position);
                         break;
 
-                    case 'D':
+                    case MainConstants.MainConstants.DateSeparationKey:
                         employees.OrderBy(x => x.SeparationDate);
                         break;
 
@@ -71,10 +72,10 @@ namespace CodeChallenge4
             string input = string.Empty;
             char option;
             Console.WriteLine("-------------Criterio de ordenación-------------");
-            Console.WriteLine("(N) - Name");
-            Console.WriteLine("(L) - LastName");
-            Console.WriteLine("(P) - Position");
-            Console.WriteLine("(D) - Date Separation");
+            Console.WriteLine(string.Format("{0} - Name", MainConstants.MainConstants.NameKey));
+            Console.WriteLine(string.Format("{0} - LastName", MainConstants.MainConstants.LastNameKey));
+            Console.WriteLine(string.Format("{0} - Position", MainConstants.MainConstants.Positionkey));
+            Console.WriteLine(string.Format("{0} - Date Separation", MainConstants.MainConstants.DateSeparationKey));
             Console.WriteLine("------------------------------------------");
 
             input = Console.ReadLine();
