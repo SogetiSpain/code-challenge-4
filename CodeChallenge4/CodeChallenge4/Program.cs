@@ -17,21 +17,30 @@ namespace CodeChallenge4
         static void Main(string[] args)
         {
             EmployeeService employeeService = new EmployeeService();
-            IEnumerable<Employee> employees = employeeService.GetEmployees().Result;
+            IEnumerable<EmployeeDTO> employees = employeeService.GetEmployees().Result;
+
+            ShowTable(employees);
+            Console.ReadLine();
         }
 
-        
 
-        public void ShowTable(IEnumerable<string> employees)
+
+
+
+        public static void ShowTable(IEnumerable<EmployeeDTO> employees)
         {
-            Console.WriteLine("Name    \t            |Position      \t         |SeparationDate        ");
+            Console.WriteLine("Name\t\t\t|Position\t\t|SeparationDate");
             Console.WriteLine("--------------------------------------------------------------------");
 
-            //iteration
-            //Console.Write(string.Format(employee""));
-            Console.WriteLine("--------------------|----------------------|------------------------");
-            //endItertion
+            foreach(var employee in employees)
+            {
+                Console.WriteLine(string.Format("{0}\t\t|{1}\t\t|{2}", employee.FullName, employee.Position, employee.SeparationDate.HasValue ? employee.SeparationDate.Value.ToShortDateString() : "No DateTime"));
+            }
+            Console.WriteLine("--------------------------------------------------------------------");
+            
 
         }
+
+
     }
 }
