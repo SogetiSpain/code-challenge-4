@@ -11,63 +11,6 @@ namespace CodeChallenge4
     using System.Threading.Tasks;
     using ServiceLayer;
 
-    /* private static void Main(string[] args)
-        {
-            string readLine = String.Empty;   
-            char op = MainMenu();
-
-            while (op > Constants.exitNumber)
-            {
-                switch (op)
-                {
-                    case Constants.RegistrarLibro:
-                        
-                        break;
-
-                    case Constants.PrestarLibro:
-                      
-                        break;
-
-                    case Constants.DevolucionLibro:
-
-                        break;
-
-                    default:
-                        Console.WriteLine("Por favor entra un valor existente en el menú");
-                        break;
-                }
-                op = MainMenu();
-            }
-        }
-
-        private static char MainMenu()
-        {
-            string input = string.Empty;
-            char option;
-            Console.WriteLine("-------------Libreria Monguer-------------");
-            Console.WriteLine("R-Registrar Libro");
-            Console.WriteLine("P.-Hacer prestamo");
-            Console.Write("D.- Hacer devolucion");
-            Console.WriteLine("0.-Salir");
-            Console.WriteLine("------------------------------------------");
-
-            input = Console.ReadLine();
-            while (!char.TryParse(input, out option))
-            {
-                input = AskOption();
-            }
-
-            return char.ToUpper(option);
-        }
-
-        private static string AskOption()
-        {
-            string readLine = string.Empty;
-            Console.WriteLine("Introduce una opción valida");
-            readLine = Console.ReadLine();
-            return readLine;
-        }*/
-
     public class Program
     {
 
