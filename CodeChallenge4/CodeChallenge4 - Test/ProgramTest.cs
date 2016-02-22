@@ -74,7 +74,7 @@ namespace CodeChallenge4___Test
                 Assert.AreEqual(auxList.ElementAt(i).SeparationDate, result.ElementAt(i).SeparationDate);
             }
         }
-        //TODO: refactoring funcionalidad comparar dos listas por separado
+        //TODO: refactoring: extraer funcionalidad recorrer  y comparar dos listas separado de casa test case
 
         [TestMethod]
         public void OrderByCriteriaLastName()
