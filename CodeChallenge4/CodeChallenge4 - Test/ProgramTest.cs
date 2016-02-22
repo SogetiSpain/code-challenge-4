@@ -83,6 +83,7 @@ namespace CodeChallenge4___Test
             var result = employeeService.OrderByCriteria<EmployeeDTO>(employeeService.Mapper(list), x => x.LastName);
             var auxList = list.OrderBy(x => x.LastName);
 
+
             for (var i = 0; i < list.Count; i++)
             {
                 Assert.AreEqual(auxList.ElementAt(i).FirstName, result.ElementAt(i).FirstName);
@@ -108,31 +109,31 @@ namespace CodeChallenge4___Test
             }
         }
 
-       
-        //private bool CompareTwoList(List<EmployeeDTO> list1, List<EmployeeDTO> list2)
-        //{
 
-        //    int i = 0;
-        //    bool areEqual = true;
-        //    while (i < list1.Count && areEqual)
-        //    {
-        //        if (
-        //            list1.ElementAt(i).FirstName.Equals(list2.ElementAt(i).FirstName) &&
-        //            list1.ElementAt(i).LastName.Equals(list2.ElementAt(i).LastName) &&
-        //            list1.ElementAt(i).Position.Equals(list2.ElementAt(i).Position) &&
-        //            list1.ElementAt(i).FirstName.Equals(list2.ElementAt(i).FirstName) &&
-        //            list1.ElementAt(i).SeparationDate.Equals(list2.ElementAt(i).SeparationDate))
-        //        {
-        //            areEqual = true;
-        //        }
-        //        else
-        //        {
-        //            areEqual = false;
-        //        }            
-        //    }
+        private bool CompareTwoList(List<EmployeeDTO> list1, List<EmployeeDTO> list2)
+        {
 
-        //    return areEqual;
-        //}
+            int i = 0;
+            bool areEqual = true;
+            while (i < list1.Count && areEqual)
+            {
+                if (
+                    list1.ElementAt(i).FirstName.Equals(list2.ElementAt(i).FirstName) &&
+                    list1.ElementAt(i).LastName.Equals(list2.ElementAt(i).LastName) &&
+                    list1.ElementAt(i).Position.Equals(list2.ElementAt(i).Position) &&
+                    list1.ElementAt(i).FirstName.Equals(list2.ElementAt(i).FirstName) &&
+                    list1.ElementAt(i).SeparationDate.Equals(list2.ElementAt(i).SeparationDate))
+                {
+                    areEqual = true;
+                }
+                else
+                {
+                    areEqual = false;
+                }
+            }
+
+            return areEqual;
+        }
 
  
 
