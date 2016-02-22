@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BussinesLayer
+namespace ServiceLayer
 {
     public class EmployeeDto
     {

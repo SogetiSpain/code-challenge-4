@@ -3,13 +3,13 @@ using System.Linq;
 using AutoMapper;
 using DataAccesLayer;
 
-namespace BussinesLayer
+namespace ServiceLayer
 {
-    public class BussinesService : IBussinesService
+    public class Service : IService
     {
         private readonly IEmployeeService employeeService;
 
-        public BussinesService()
+        public Service()
         {
             employeeService = new EmployeeService();
         }

@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinesLayer\BussinesLayer.csproj">
+    <ProjectReference Include="..\BussinesLayer\ServiceLayer.csproj">
       <Project>{6467c5f2-551b-4ae3-b673-85897d76d828}</Project>
-      <Name>BussinesLayer</Name>
+      <Name>ServiceLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccesLayer\DataAccesLayer.csproj">
       <Project>{ff65f4c5-ac0b-452e-9db7-8730bef892b5}</Project>

@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccesLayer", "DataAccesLayer\DataAccesLayer.csproj", "{FF65F4C5-AC0B-452E-9DB7-8730BEF892B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinesLayer", "BussinesLayer\BussinesLayer.csproj", "{6467C5F2-551B-4AE3-B673-85897D76D828}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "BussinesLayer\ServiceLayer.csproj", "{6467C5F2-551B-4AE3-B673-85897D76D828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

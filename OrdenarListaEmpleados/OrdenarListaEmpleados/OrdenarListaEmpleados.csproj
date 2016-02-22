@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinesLayer\BussinesLayer.csproj">
+    <ProjectReference Include="..\BussinesLayer\ServiceLayer.csproj">
       <Project>{6467C5F2-551B-4AE3-B673-85897D76D828}</Project>
-      <Name>BussinesLayer</Name>
+      <Name>ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

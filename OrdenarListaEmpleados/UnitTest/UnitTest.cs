@@ -9,7 +9,7 @@ Necesito ordenar los resultados de una consulta.
 
 
 using System.Linq;
-using BussinesLayer;
+using ServiceLayer;
 using DataAccesLayer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -18,14 +18,14 @@ namespace UnitTest
     [TestClass]
     public class UnitTest
     {
-        private BussinesService _bussinesEmployeeServie;
+        private Service _service;
         private EmployeeService _employeeService;
 
         [TestInitialize]
         public void Initialize()
         {
             _employeeService = new EmployeeService();
-            _bussinesEmployeeServie = new BussinesService();
+            _service = new Service();
         }
 
         [TestMethod]
@@ -38,7 +38,7 @@ namespace UnitTest
         [TestMethod]
         public void GetEmployeesOrderedByFirstName_test()
         {
-            var result = _bussinesEmployeeServie.ObtenerEmpleadosOrdenados("N");
+            var result = _service.ObtenerEmpleadosOrdenados("N");
             var employeeList = _employeeService.GetEmployees();
             var expectedList = employeeList.OrderBy(x => x.FirstName);
 
@@ -54,7 +54,7 @@ namespace UnitTest
         [TestMethod]
         public void GetEmployeesOrderedByLastName_test()
         {
-            var result = _bussinesEmployeeServie.ObtenerEmpleadosOrdenados("A");
+            var result = _service.ObtenerEmpleadosOrdenados("A");
             var employeeList = _employeeService.GetEmployees();
             var expectedList = employeeList.OrderBy(x => x.LastName);
 
@@ -70,7 +70,7 @@ namespace UnitTest
         [TestMethod]
         public void GetEmployeesOrderedByPosition_test()
         {
-            var result = _bussinesEmployeeServie.ObtenerEmpleadosOrdenados("P");
+            var result = _service.ObtenerEmpleadosOrdenados("P");
             var employeeList = _employeeService.GetEmployees();
             var expectedList = employeeList.OrderBy(x => x.Position);
 
@@ -86,7 +86,7 @@ namespace UnitTest
         [TestMethod]
         public void GetEmployeesOrderedByDate_test()
         {
-            var result = _bussinesEmployeeServie.ObtenerEmpleadosOrdenados("F");
+            var result = _service.ObtenerEmpleadosOrdenados("F");
             var employeeList = _employeeService.GetEmployees();
             var expectedList = employeeList.OrderBy(x => x.SeparationDate);
 
@@ -102,7 +102,7 @@ namespace UnitTest
         [TestMethod]
         public void GetEmployeesOrderedByNothing_test()
         {
-            var result = _bussinesEmployeeServie.ObtenerEmpleadosOrdenados("");
+            var result = _service.ObtenerEmpleadosOrdenados("");
             var expectedList = _employeeService.GetEmployees();
 
             for (var i = 0; i < result.Count; i++)

@@ -1,5 +1,5 @@
 ﻿using System;
-using BussinesLayer;
+using ServiceLayer;
 
 namespace OrdenarListaEmpleados
 {
@@ -7,11 +7,11 @@ namespace OrdenarListaEmpleados
     {
         private static void Main(string[] args)
         {
-            var bussinesService = new BussinesService();
+            var Service = new Service();
             Console.WriteLine("Vamos con la lista de empleados");
             Console.WriteLine("¿Quiere ordenar la lista? (N)ombre, (A)pellido, (P)osicion, (F)echa de separación");
             var opcion = Console.ReadLine();
-            var result = bussinesService.ObtenerEmpleadosOrdenados(opcion);
+            var result = Service.ObtenerEmpleadosOrdenados(opcion);
 
             Console.WriteLine(result.ToStringTable(
                 new[] {"Name", "Position", "Separation Date"},
