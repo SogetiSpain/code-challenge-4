@@ -11,11 +11,13 @@ namespace CodeChallenge4
     using System.Threading.Tasks;
     using ServiceLayer;
 
-    class Program
+
+    public class Program
     {
         static void Main(string[] args)
         {
-          
+            EmployeeService employeeService = new EmployeeService();
+            IEnumerable<Employee> employees = employeeService.GetEmployees().Result;
         }
 
         
