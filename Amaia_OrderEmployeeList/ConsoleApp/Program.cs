@@ -67,11 +67,11 @@
 
         public static void PrintList(IEnumerable<Employee> list)
         {
-            Console.WriteLine("{0,10}|{1,15}|{2,20}|{3,17}", Display.FirstName, Display.LastName, Display.Position, Display.DateSeparation);
+            Console.WriteLine(" {0,12}|{1,15}|{2,20}|{3,17}", Display.FirstName, Display.LastName, Display.Position, Display.DateSeparation);
             Console.WriteLine(Constants.Separator);
             list.ToList().ForEach(x =>
             {
-                Console.WriteLine(String.Format("{0,10}|{1,15}|{2,20}|{3,17}", x.FirstName, x.LastName, x.Position, x.SeparationDate.HasValue ? x.SeparationDate.Value.ToShortDateString() : string.Empty));
+                Console.WriteLine(String.Format(" {0,12}|{1,15}|{2,20}|{3,17}", x.FirstName, x.LastName, x.Position, x.SeparationDate.HasValue ? x.SeparationDate.Value.ToShortDateString() : string.Empty));
             });
 
             Console.WriteLine(string.Empty);
