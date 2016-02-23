@@ -64,49 +64,29 @@ namespace CodeChallenge4___Test
         public void OrderByCriteriaName()
         {
 
-            var result = employeeService.OrderByCriteria<EmployeeDTO>(employeeService.Mapper(list), x => x.FirstName);
-            var auxList = list.OrderBy(x => x.FirstName);
-            for (var i = 0; i < list.Count; i++)
-            {
-                Assert.AreEqual(auxList.ElementAt(i).FirstName, result.ElementAt(i).FirstName);
-                Assert.AreEqual(auxList.ElementAt(i).LastName, result.ElementAt(i).LastName);
-                Assert.AreEqual(auxList.ElementAt(i).Position, result.ElementAt(i).Position);
-                Assert.AreEqual(auxList.ElementAt(i).SeparationDate, result.ElementAt(i).SeparationDate);
-            }
+            List<EmployeeDTO> result = employeeService.OrderByCriteria<EmployeeDTO>(employeeService.Mapper(list), x => x.FirstName).ToList();
+            List<EmployeeDTO> auxList = employeeService.Mapper(list.OrderBy(x => x.FirstName).ToList());
+            Assert.IsTrue(CompareTwoList(result, auxList));
         }
-        //TODO: refactoring: extraer funcionalidad recorrer  y comparar dos listas separado de casa test case
 
         [TestMethod]
         public void OrderByCriteriaLastName()
         {
 
-            var result = employeeService.OrderByCriteria<EmployeeDTO>(employeeService.Mapper(list), x => x.LastName);
-            var auxList = list.OrderBy(x => x.LastName);
+            List<EmployeeDTO> result = employeeService.OrderByCriteria<EmployeeDTO>(employeeService.Mapper(list), x => x.LastName).ToList();
+            List<EmployeeDTO> auxList = employeeService.Mapper(list.OrderBy(x => x.LastName).ToList());
 
-
-            for (var i = 0; i < list.Count; i++)
-            {
-                Assert.AreEqual(auxList.ElementAt(i).FirstName, result.ElementAt(i).FirstName);
-                Assert.AreEqual(auxList.ElementAt(i).LastName, result.ElementAt(i).LastName);
-                Assert.AreEqual(auxList.ElementAt(i).Position, result.ElementAt(i).Position);
-                Assert.AreEqual(auxList.ElementAt(i).SeparationDate, result.ElementAt(i).SeparationDate);
-            }
+            Assert.IsTrue(CompareTwoList(result, auxList));
         }
 
         [TestMethod]
         public void OrderByCriteriaPosition()
         {
 
-            var result = employeeService.OrderByCriteria<EmployeeDTO>(employeeService.Mapper(list), x => x.Position);
-            var auxList = list.OrderBy(x => x.Position);
+            List<EmployeeDTO> result = employeeService.OrderByCriteria<EmployeeDTO>(employeeService.Mapper(list), x => x.Position).ToList();
+            List<EmployeeDTO> auxList = employeeService.Mapper(list.OrderBy(x => x.Position).ToList());
 
-            for (var i = 0; i < list.Count; i++)
-            {
-                Assert.AreEqual(auxList.ElementAt(i).FirstName, result.ElementAt(i).FirstName);
-                Assert.AreEqual(auxList.ElementAt(i).LastName, result.ElementAt(i).LastName);
-                Assert.AreEqual(auxList.ElementAt(i).Position, result.ElementAt(i).Position);
-                Assert.AreEqual(auxList.ElementAt(i).SeparationDate, result.ElementAt(i).SeparationDate);
-            }
+            Assert.IsTrue(CompareTwoList(result,auxList));
         }
 
 
@@ -125,6 +105,7 @@ namespace CodeChallenge4___Test
                     list1.ElementAt(i).SeparationDate.Equals(list2.ElementAt(i).SeparationDate))
                 {
                     areEqual = true;
+                    i++;
                 }
                 else
                 {
