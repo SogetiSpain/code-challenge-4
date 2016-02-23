@@ -43,8 +43,7 @@
 
         public List<Employee> OrderList<T>(List<Employee> list, Func<Employee, T> orderByProperty)
         {
-            list.OrderBy(orderByProperty);
-            return list;
+            return list.OrderBy(orderByProperty).ToList();
         }
     }
 }

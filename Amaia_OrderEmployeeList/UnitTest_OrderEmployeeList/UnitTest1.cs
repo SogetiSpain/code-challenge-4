@@ -59,6 +59,7 @@
             CompareList(result, expectedResult.ToList());
         }
 
+        [TestMethod]
         public void OrderedBy_LastName()
         {
             var result = service.OrderList(list, x => x.LastName);
@@ -66,6 +67,7 @@
             CompareList(result, expectedResult.ToList());
         }
 
+        [TestMethod]
         public void OrderedBy_Position()
         {
             var result = service.OrderList(list, x => x.Position);
@@ -73,6 +75,7 @@
             CompareList(result, expectedResult.ToList());
         }
 
+        [TestMethod]
         public void OrderedBy_SeparationDate()
         {
             var result = service.OrderList(list, x => x.SeparationDate);
