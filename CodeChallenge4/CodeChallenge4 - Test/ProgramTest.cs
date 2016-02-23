@@ -98,11 +98,11 @@ namespace CodeChallenge4___Test
             while (i < list1.Count && areEqual)
             {
                 if (
-                    list1.ElementAt(i).FirstName.Equals(list2.ElementAt(i).FirstName) &&
-                    list1.ElementAt(i).LastName.Equals(list2.ElementAt(i).LastName) &&
-                    list1.ElementAt(i).Position.Equals(list2.ElementAt(i).Position) &&
-                    list1.ElementAt(i).FirstName.Equals(list2.ElementAt(i).FirstName) &&
-                    list1.ElementAt(i).SeparationDate.Equals(list2.ElementAt(i).SeparationDate))
+                    list1[i].FirstName.Equals(list2[i].FirstName) &&
+                    list1[i].LastName.Equals(list2[i].LastName) &&
+                    list1[i].Position.Equals(list2[i].Position) &&
+                    list1[i].FirstName.Equals(list2[i].FirstName) &&
+                    list1[i].SeparationDate.Equals(list2[i].SeparationDate))
                 {
                     areEqual = true;
                     i++;
