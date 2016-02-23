@@ -36,28 +36,42 @@
 
         public static bool MenuAction(OrderEnum option, bool exit)
         {
+            var list = new List<Employee>();
+
             switch (option)
             {
+                case OrderEnum.A:
+                    list = service.TakeListAndOrder(x => x.LastName).Result;
+                    PrintList(list);
+                    break;
+                case OrderEnum.N:
+                    list = service.TakeListAndOrder(x => x.FirstName).Result;
+                    PrintList(list);
+                    break;
+                case OrderEnum.P:
+                    list = service.TakeListAndOrder(x => x.Position).Result;
+                    PrintList(list);
+                    break;
+                case OrderEnum.F:
+                    list = service.TakeListAndOrder(x => x.SeparationDate).Result;
+                    PrintList(list);
+                    break;
                 case OrderEnum.S:
                     exit = true;
                     break;
                 default:
-                    var list = service.TakeListAndOrder().Result;
-                    PrintList(list);
                     break;
             }
-
             return exit;
         }
 
         public static void PrintList(IEnumerable<Employee> list)
         {
-            Console.WriteLine("{0,30}|{1,20}|{2,17}", Display.Name, Display.Position, Display.DateSeparation);
+            Console.WriteLine("{0,10}|{1,15}|{2,20}|{3,17}", Display.FirstName, Display.LastName, Display.Position, Display.DateSeparation);
             Console.WriteLine(Constants.Separator);
             list.ToList().ForEach(x =>
             {
-                var name = string.Format("{0} {1}", x.FirstName, x.LastName);
-                Console.WriteLine(String.Format("{0,30}|{1,20}|{2,17}", name, x.Position, x.SeparationDate.HasValue ? x.SeparationDate.Value.ToShortDateString() : string.Empty));
+                Console.WriteLine(String.Format("{0,10}|{1,15}|{2,20}|{3,17}", x.FirstName, x.LastName, x.Position, x.SeparationDate.HasValue ? x.SeparationDate.Value.ToShortDateString() : string.Empty));
             });
 
             Console.WriteLine(string.Empty);

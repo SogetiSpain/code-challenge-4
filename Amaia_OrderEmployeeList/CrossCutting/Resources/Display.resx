@@ -123,8 +123,11 @@
   <data name="DateSeparation" xml:space="preserve">
     <value>Date separation</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last name</value>
   </data>
   <data name="Order" xml:space="preserve">
     <value>((A)pellido, (N)ombre, (P)osición, (F)echa de separación o (S)alir)</value>

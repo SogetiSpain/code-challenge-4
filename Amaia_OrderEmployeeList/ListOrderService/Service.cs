@@ -8,14 +8,16 @@
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
+    using System.Linq;
+
     public class Service
     {
         private const string URL = Constants.AzureEmployeesUrl;
 
-        public async Task<List<Employee>> TakeListAndOrder()
+        public async Task<List<Employee>> TakeListAndOrder<T>(Func<Employee, T> orderByProperty)
         {
             var list = await this.GetList();
-            return this.OrderList(list);
+            return this.OrderList(list, orderByProperty);
         }
 
         public async Task<List<Employee>> GetList()
@@ -39,9 +41,9 @@
             return model;
         }
 
-        //public async Task<List<Employee>> OrderList(List<Employee> list)
-        public List<Employee> OrderList(List<Employee> list)
+        public List<Employee> OrderList<T>(List<Employee> list, Func<Employee, T> orderByProperty)
         {
+            list.OrderBy(orderByProperty);
             return list;
         }
     }

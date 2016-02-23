@@ -79,11 +79,20 @@ namespace CrossCutting.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to First name.
         /// </summary>
-        public static string Name {
+        public static string FirstName {
             get {
-                return ResourceManager.GetString("Name", resourceCulture);
+                return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
             }
         }
         
